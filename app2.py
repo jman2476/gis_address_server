@@ -116,5 +116,5 @@ ws2.move_range('F1:F1186', cols=-2)
 
 
 # Save files
-wb1.save('mail_attmpt6shifted.xlsx')
-wb2.save('loc_attmpt6shifted.xlsx')
+wb1.save('site_owner_list.xlsx')
+wb2.save('location_mail_list.xlsx')
