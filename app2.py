@@ -3,8 +3,8 @@ from openpyxl import Workbook
 
 print('done')
 # Read shapefile (.shp)
-sf = shapefile.Reader('../Pennypack-st-proj/mailing_list_pennypack.shp')
-
+sf = shapefile.Reader('../woodland-ave/woodland_ave.shp', encoding='latin1')
+print(sf)
 # Read fieldnames and records
 fieldnames = [f[0] for f in sf.fields[1:]]
 fields = [sf.fields[1:]] # not necessary
@@ -84,8 +84,8 @@ for rec in records_culled:
 # Filter mailing list
 filtered_mail_records = []
 for row in mail_records:
-    if row[0] == row[4]:
-        print(row[0], row[4])
+    if row[1] == row[5]:
+        print(row[1], row[5])
     else:
         filtered_mail_records.append(row)    
 
@@ -116,5 +116,5 @@ ws2.move_range('F1:F1186', cols=-2)
 
 
 # Save files
-wb1.save('site_owner_list.xlsx')
-wb2.save('location_mail_list.xlsx')
+wb1.save('side_woodland_list.xlsx')
+wb2.save('woodland_mail_list.xlsx')
