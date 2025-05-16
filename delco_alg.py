@@ -2,7 +2,7 @@ import shapefile
 from openpyxl import Workbook
 
 # Read shapefile (.shp)
-sf = shapefile.Reader('../Upper-Derby-proj/mailing_area.shp', encoding='latin1')
+sf = shapefile.Reader('../Upper-Derby-proj/zip_19082.shp', encoding='latin1')
 print(sf)
 # Read fieldnames and records
 fieldnames = [f[0] for f in sf.fields[1:]]
@@ -12,7 +12,7 @@ culled_records = []
 
 # select columns
 required_columns = [1, 12, 13, 14, 15, 16]
-col_names = ['PIN', 'number', 'ADRADD', 'ADRDIR', 'street', 'ADRSUF']
+col_names = ['PIN', 'number', 'ADRADD', 'ADRDIR', 'street', 'ADRSUF', 'zip']
 
 # select required data
 for record in records:
@@ -33,4 +33,4 @@ ws.append(col_names)
 for rec in culled_records:
     ws.append(rec)
 
-wb.save('upperdarby.xlsx')
+wb.save('mail_19082.xlsx')
