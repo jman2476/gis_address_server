@@ -7,7 +7,7 @@ sf = shapefile.Reader('../woodland-ave/woodland_ave.shp', encoding='latin1')
 print(sf)
 # Read fieldnames and records
 fieldnames = [f[0] for f in sf.fields[1:]]
-fields = [sf.fields[1:]] # not necessary
+
 records = sf.records()
 
 # setup buckets
