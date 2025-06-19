@@ -3,11 +3,11 @@ from openpyxl import Workbook
 
 print('done')
 # Read shapefile (.shp)
-sf = shapefile.Reader('../woodland-ave/woodland_ave.shp', encoding='latin1')
+sf = shapefile.Reader('../Line2678_proj/mailing-area.shp', encoding='latin1')
 print(sf)
 # Read fieldnames and records
 fieldnames = [f[0] for f in sf.fields[1:]]
-fields = [sf.fields[1:]] # not necessary
+
 records = sf.records()
 
 # setup buckets
@@ -116,5 +116,5 @@ ws2.move_range('F1:F1186', cols=-2)
 
 
 # Save files
-wb1.save('side_woodland_list.xlsx')
-wb2.save('woodland_mail_list.xlsx')
+# wb1.save('side_woodland_list.xlsx')
+wb2.save('Line-2678.xlsx')
